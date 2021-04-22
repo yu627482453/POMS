@@ -19,7 +19,7 @@ class OpinionspiderPipeline:
 
     def process_item(self, item, spider):
         path = EConfig.get_download_path()
-        with open(path + "0.json", "a+") as f:
+        with open(path + "/0.json", "a+") as f:
             line = json.dumps(ItemAdapter(item).asdict()) + "\n"
             f.write(line)
 

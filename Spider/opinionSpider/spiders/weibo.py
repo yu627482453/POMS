@@ -29,9 +29,18 @@ class WeiboSpider(scrapy.Spider, ABC):
         datas = hot_json['data']['statuses']
         for data in datas:
             oItem = OItem()
-            oItem['id'] = str(uuid.uuid1())
-            oItem['createdTime'] = data['created_at']
-            oItem['author'] = data['user']['id']
+            try:
+                oItem['id'] = str(uuid.uuid1())
+            except:
+                pass
+            try:
+                oItem['createdTime'] = data['created_at']
+            except:
+                pass
+            try:
+                oItem['author'] = data['user']['screen_name']
+            except:
+                pass
 
             repost_count = data['reposts_count']
             comment_count = data['comments_count']

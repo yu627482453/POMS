@@ -9,8 +9,11 @@ import scrapy
 class OItem(scrapy.Item):
 
     id = scrapy.Field()
+    title = scrapy.Field()
     text = scrapy.Field()
     heat = scrapy.Field()
+    url = scrapy.Field()
     author = scrapy.Field()
     createdTime = scrapy.Field()
+    source = scrapy.Field()
 
