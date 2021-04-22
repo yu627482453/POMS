@@ -5,7 +5,7 @@
 @file: weibo.py
 @time1: 2021/4/22 10:53
 """
-from opinionSpider.opinionSpider.config.config import EConfig
+from opinionSpider.conf.conf import EConfig
 
 
 class WeiboConfig:

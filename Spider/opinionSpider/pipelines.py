@@ -9,7 +9,7 @@ import json
 
 from itemadapter import ItemAdapter
 
-from opinionSpider.opinionSpider.config.config import EConfig
+from opinionSpider.conf.conf import EConfig
 
 
 class OpinionspiderPipeline:
@@ -20,6 +20,8 @@ class OpinionspiderPipeline:
     def process_item(self, item, spider):
         path = EConfig.get_download_path()
         with open(path + "0.json", "a+") as f:
-            line = json.dumps(ItemAdapter(item).asdict())
+            line = json.dumps(ItemAdapter(item).asdict()) + "\n"
             f.write(line)
-        return item
+
+    def close_spider(self, spider):
+        pass

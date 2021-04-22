@@ -12,8 +12,8 @@ from bs4 import BeautifulSoup
 import uuid
 import scrapy
 
-from opinionSpider.opinionSpider.config.weibo import WeiboConfig
-from opinionSpider.opinionSpider.items import OItem
+from opinionSpider.conf.weibo import WeiboConfig
+from opinionSpider.items import OItem
 
 
 class WeiboSpider(scrapy.Spider, ABC):
@@ -29,7 +29,7 @@ class WeiboSpider(scrapy.Spider, ABC):
         datas = hot_json['data']['statuses']
         for data in datas:
             oItem = OItem()
-            oItem['id'] = uuid.uuid1()
+            oItem['id'] = str(uuid.uuid1())
             oItem['createdTime'] = data['created_at']
             oItem['author'] = data['user']['id']
 
@@ -37,12 +37,12 @@ class WeiboSpider(scrapy.Spider, ABC):
             comment_count = data['comments_count']
             attitude_count = data['attitudes_count']
 
-            model: str = WeiboConfig().get_heat_model()
-
-            oItem['heat'] = eval(model, {'x': repost_count,
-                                         'y': comment_count,
-                                         'z': attitude_count}
-                                 )
+            # model: str = WeiboConfig().get_heat_model()
+            #
+            # oItem['heat'] = eval(model, {'x': repost_count,
+            #                              'y': comment_count,
+            #                              'z': attitude_count}
+            #                      )
 
             yield scrapy.Request(WeiboConfig().get_extend(data['id']), callback=self.parse_extend,
                                  meta={'oItem': oItem})
