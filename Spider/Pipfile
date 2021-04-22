@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 scrapy = "*"
+pyyaml = "*"
+bs4 = "*"
 
 [dev-packages]
 

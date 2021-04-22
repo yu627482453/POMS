@@ -5,9 +5,21 @@
 
 
 # useful for handling different item types with a single interface
+import json
+
 from itemadapter import ItemAdapter
+
+from opinionSpider.opinionSpider.config.config import EConfig
 
 
 class OpinionspiderPipeline:
+
+    def open_spider(self, spider):
+        pass
+
     def process_item(self, item, spider):
+        path = EConfig.get_download_path()
+        with open(path + "0.json", "a+") as f:
+            line = json.dumps(ItemAdapter(item).asdict())
+            f.write(line)
         return item
