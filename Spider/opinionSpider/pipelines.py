@@ -18,10 +18,16 @@ class OpinionspiderPipeline:
         pass
 
     def process_item(self, item, spider):
-        path = EConfig.get_download_path()
-        with open(path + "/0.json", "a+") as f:
-            line = json.dumps(ItemAdapter(item).asdict()) + "\n"
-            f.write(line)
+        if spider.name == "topfish":
+            path = EConfig.get_download_path()
+            with open(path + "/0.json", "a+") as f:
+                line = json.dumps(ItemAdapter(item).asdict()) + "\n"
+                f.write(line)
+        else:
+            path = EConfig.get_download_path()
+            with open(path + "/2.json", "a+") as f:
+                line = json.dumps(ItemAdapter(item).asdict()) + "\n"
+                f.write(line)
 
     def close_spider(self, spider):
         pass

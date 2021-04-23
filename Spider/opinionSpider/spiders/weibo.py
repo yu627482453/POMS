@@ -6,6 +6,8 @@
 @time1: 2021/4/22 10:59
 """
 import json
+import re
+import time
 from abc import ABC
 from bs4 import BeautifulSoup
 
@@ -31,15 +33,16 @@ class WeiboSpider(scrapy.Spider, ABC):
             oItem = OItem()
             try:
                 oItem['id'] = str(uuid.uuid1())
-            except:
+            except KeyError:
                 pass
             try:
-                oItem['createdTime'] = data['created_at']
-            except:
+                time1 = time.strptime(data['created_at'], "%a %b %d %H:%M:%S %z %Y")
+                oItem['createdTime'] = time.strftime("%Y %M %d %H:%M:%S", time1)
+            except KeyError:
                 pass
             try:
                 oItem['author'] = data['user']['screen_name']
-            except:
+            except KeyError:
                 pass
 
             repost_count = data['reposts_count']
@@ -63,5 +66,11 @@ class WeiboSpider(scrapy.Spider, ABC):
             return
         data = extend_json['data']
         oItem['text'] = BeautifulSoup(data['longTextContent']).get_text()
+
+        match_obj = re.search(r"#(.*)#", oItem['text'])
+        if match_obj:
+            oItem['title'] = match_obj.group()
+        else:
+            oItem['title'] = ""
 
         yield oItem

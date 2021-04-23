@@ -14,7 +14,7 @@ import requests
 
 from abc import ABC
 
-from opinionSpider.items import OItem
+from opinionSpider.items import OpItem
 from opinionSpider.conf.topfish import TopfishConfig
 
 
@@ -29,44 +29,52 @@ class TopfishSpider(scrapy.Spider, ABC):
 
         datas = json_type['Data']['综合']
 
+        source_id = 0
         for data in datas:
+            source_id += 1
             yield scrapy.Request(url=TopfishConfig().get_index().format(id=data['id']), callback=self.parse_index,
-                                 meta={'source': data['name']})
+                                 meta={'source': data['name'], 'source_id': source_id})
+            break
 
     def parse_index(self, response):
         json_index = json.loads(response.text)
         datas = json_index['Data']['data']
 
-        oItem = OItem()
+        opItem = OpItem()
+        rank1 = 0
         for data in datas:
+            rank1 += 1
             try:
-                oItem['id'] = str(uuid.uuid1())
+                opItem['id'] = str(uuid.uuid1())
             except KeyError:
                 pass
             try:
-                oItem['title'] = data['Title']
+                opItem['title'] = data['Title']
             except KeyError:
                 pass
             try:
-                oItem['text'] = data['text']
+                opItem['text'] = data['text']
             except KeyError:
                 pass
             try:
-                oItem['url'] = self.parse_url(data['Url'])
-                print(oItem['url'])
+                opItem['url'] = self.parse_url(data['Url'])
+                print(opItem['url'])
             except KeyError:
                 pass
+            opItem['sourceId'] = response.meta['source_id']
             try:
-                oItem['source'] = response.meta['source']
+                opItem['sourceName'] = response.meta['source']
             except KeyError:
-                oItem['source'] = ""
+                opItem['sourceName'] = ""
+
+            opItem['rank'] = rank1
 
             try:
                 time1 = time.localtime(data['CreateTime'])
-                oItem['createdTime'] = time.strftime("%Y %M %d %H:%M:%S", time1)
+                opItem['createdTime'] = time.strftime("%Y %M %d %H:%M:%S", time1)
             except KeyError:
                 pass
-            yield oItem
+            yield opItem
 
     def parse_url(self, url):
         header = {

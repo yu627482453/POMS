@@ -30,24 +30,36 @@ class ToutiaoSpider(scrapy.Spider, ABC):
             oItem: OItem = OItem()
             try:
                 oItem['id'] = str(uuid.uuid1())
-            except:
+            except KeyError:
+                pass
+            try:
+                oItem['title'] = data['title']
+            except KeyError:
+                pass
+            try:
+                oItem['text'] = data['abstract']
+            except KeyError:
                 pass
             try:
                 time1 = time.localtime(data['behot_time'])
                 oItem['createdTime'] = time.strftime("%Y %M %d %H:%M:%S", time1)
-            except:
+            except KeyError:
+                pass
+            try:
+                oItem['author'] = data['source']
+            except KeyError:
                 pass
             try:
                 reportCount = data['reportCount']
-            except:
+            except KeyError:
                 pass
             try:
                 commentCount = data['commentCount']
-            except:
+            except KeyError:
                 pass
             try:
                 attitudeCount = data['attitudes_count']
-            except:
+            except KeyError:
                 pass
             # TODO heat
 
