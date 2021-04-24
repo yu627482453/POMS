@@ -25,10 +25,11 @@ class OpinionspiderPipeline:
         self.dict1["list"].append(ItemAdapter(item).asdict())
 
     def close_spider(self, spider):
+        if not spider.name == "topfish":
+            self.dict1['type'] = 1
         path = EConfig.get_download_path()
         time1 = time.gmtime()
-        time2 = time.strftime("%m-%d", time1)
+        time2 = time.strftime("%m-%d-%H-%M-%S", time1)
         with open(path + "/" + str(time2) + ".log", "a+") as f:
             line = json.dumps(self.dict1)
             f.write(line)
-
