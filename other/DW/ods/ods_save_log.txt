@@ -1,0 +1,9 @@
+//1. 创建输入数据表
+CREATE EXTERNAL TABLE ods_save_log (`line` string)
+PARTITIONED BY(`dt` string)
+STORED AS
+  INPUTFORMAT 'com.hadoop.mapred.DeprecatedLzoTextInputFormat'
+  OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION '/warehouse/gmall/ods/ods_save_log';
+  
+load data input '/origin_data/gmall/log/topic_save/2021-04-24' into table gmall.ods_save_log partition(dt='2021-04-24')
