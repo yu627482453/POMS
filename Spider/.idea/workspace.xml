@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment">
-      <change afterPath="$PROJECT_DIR$/../flume-interceptor/src/main/java/com/nex/flume/interceptor/LogETLInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flume-interceptor/src/main/java/com/nex/flume/interceptor/LogUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/POMS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opinionSpider/conf/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/conf/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opinionSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs/2021-04-24_05-04-21.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

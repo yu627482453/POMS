@@ -34,7 +34,6 @@ class TopfishSpider(scrapy.Spider, ABC):
             source_id += 1
             yield scrapy.Request(url=TopfishConfig().get_index().format(id=data['id']), callback=self.parse_index,
                                  meta={'source': data['name'], 'source_id': source_id})
-            break
 
     def parse_index(self, response):
         json_index = json.loads(response.text)
