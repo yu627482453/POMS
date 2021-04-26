@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment">
-      <change afterPath="$PROJECT_DIR$/../logs/04-24.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/conf/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/conf/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opinionSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs/04-24-14-44-28.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs/04-24-14-44-55.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs/04-24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +212,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619273793001</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="spider Adjustment">
+      <created>1619276459166</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619276459166</updated>
+    </task>
+    <task id="LOCAL-00011" summary="spider Adjustment">
+      <created>1619276466868</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619276466868</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

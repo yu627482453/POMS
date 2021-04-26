@@ -20,7 +20,7 @@ class EConfig:
 
     @staticmethod
     def get_download_path():
-        download_re_path = "/../logs/"
+        download_re_path = "/../data/"
         download_abs_path = os.path.abspath(os.path.curdir + download_re_path)
         return download_abs_path
 

@@ -16,20 +16,15 @@ from opinionSpider.conf.conf import EConfig
 class OpinionspiderPipeline:
 
     def open_spider(self, spider):
-        self.dict1 = {
-            "type": 0,
-            "list": []
-        }
+        path = EConfig.get_download_path()
+        if not spider.name == 'topfish':
+            self.file = open(path + "/analyze.log", "a+")
+        else:
+            self.file = open(path + "/save.log", "a+")
 
     def process_item(self, item, spider):
-        self.dict1["list"].append(ItemAdapter(item).asdict())
+        line = json.dumps(ItemAdapter(item).asdict())
+        self.file.write(line + "\n")
 
     def close_spider(self, spider):
-        if not spider.name == "topfish":
-            self.dict1['type'] = 1
-        path = EConfig.get_download_path()
-        time1 = time.gmtime()
-        time2 = time.strftime("%m-%d-%H-%M-%S", time1)
-        with open(path + "/" + str(time2) + ".log", "a+") as f:
-            line = json.dumps(self.dict1)
-            f.write(line)
+        self.file.close()
