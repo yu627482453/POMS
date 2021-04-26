@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/conf/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/conf/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/04-24-14-44-28.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/04-24-14-44-55.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/04-24.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/src/main/java/com/nex/flume/interceptor/LogTypeInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/classes/com/nex/flume/interceptor/LogTypeInterceptor$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/classes/com/nex/flume/interceptor/LogTypeInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

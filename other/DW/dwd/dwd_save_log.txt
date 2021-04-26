@@ -1,0 +1,19 @@
+// 建表
+CREATE EXTERNAL TABLE dwd_save_log(
+`id` string,
+`title` string,
+`text` string,
+`rank` int,
+`url` string,
+`createdTime` string,
+`sourceId` string,
+`sourceName` string
+)
+PARTITIONED BY (dt string)
+location '/warehouse/gmall/dwd/dwd_save_log/';
+
+// 插入数据
+insert overwrite table dwd_save_log
+PARTITION (dt='2021-04-25')
+select 
+	get_json_object(line,

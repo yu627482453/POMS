@@ -1,0 +1,9 @@
+// 2. 创建数据分析表
+CREATE EXTERNAL TABLE ods_analyze_log(`line` string)
+PARTITIONED BY (`dt` string)
+STORED AS
+  INPUTFORMAT 'com.hadoop.mapred.DeprecatedLzoTextInputFormat'
+  OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION '/warehouse/gmall/ods/ods_analyze_log';
+
+load data inpath '/origin_data/gmall/log/topic_analyze/2021-04-25' into table gmall.ods_analyze_log partition(dt='2021-04-25');
