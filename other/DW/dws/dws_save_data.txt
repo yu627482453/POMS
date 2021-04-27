@@ -1,0 +1,29 @@
+drop table if exists dws_save_data;
+
+create external table dws_save_data
+(
+  `id` string,
+  `title` string,
+  `text` string,
+  `rank` int,
+  `url` string,
+  `createdTime` string,
+  `sourceId` string,
+)
+partitioned by (dt string)
+stored as parquet
+location '/warehouse/gmall/dws/dws_save_data';
+
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert overwrite table dws_save_data
+partition(dt='2021-04-27')
+select
+  id,
+  title,
+  text,
+  rank,
+  url,
+  createdTime,
+  sourceId,
+from dwd_save_log;

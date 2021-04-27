@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment">
+    <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/toutiao.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/toutiao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/weibo.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/weibo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619276466868</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="spider Adjustment2">
+      <created>1619489119685</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1619489119685</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -266,6 +269,7 @@
     <MESSAGE value="weibo spider finish" />
     <MESSAGE value="topfish spider finish" />
     <MESSAGE value="spider Adjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="spider Adjustment" />
+    <MESSAGE value="spider Adjustment2" />
+    <option name="LAST_COMMIT_MESSAGE" value="spider Adjustment2" />
   </component>
 </project>

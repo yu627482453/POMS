@@ -1,0 +1,26 @@
+drop table if exists dws_heat_time;
+
+create external table dws_heat_grow
+(
+  `originId` string COMMENT '原始id',
+  `Time` string COMMENT '时间',
+  `heat` int COMMENT '热度'
+)
+partitioned by(dt string)
+stored as parquet
+location '/warehouse/gmall/dws/dws_heat_time'
+;
+
+
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert overwrite table dws_heat_time
+partition(dt='2021-04-27')
+select
+  originId,
+  concat_ws(',', collect_set(selectTime)) Time,
+  concat_ws(',', collect_set(heat)) heat
+from dwd_analyze_log
+where date_format(dt, 'yyyy-MM') = date_format('2021-04-27', 'yyyy-MM')
+group by originId;
+  

@@ -14,6 +14,15 @@ location '/warehouse/gmall/dwd/dwd_save_log/';
 
 // 插入数据
 insert overwrite table dwd_save_log
-PARTITION (dt='2021-04-25')
+PARTITION (dt='2021-04-26')
 select 
-	get_json_object(line,
+	get_json_object(line, '$.id') id,
+	get_json_object(line, '$.title') title,
+	get_json_object(line, '$.text') text,
+	get_json_object(line, '$.rank') rank,
+	get_json_object(line, '$url') url,
+	get_json_object(line, 'createdTime') createdTime,
+	get_json_object(line, 'sourceId') sourceId,
+	get_json_object(line, 'sourceName') sourceName
+from ods_save_log
+where dt='2021-04-26');

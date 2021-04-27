@@ -1,0 +1,33 @@
+drop table if exists dws_origin_text;
+
+create external table dws_save_data
+(
+  `originId` string,
+  `text` string,
+  `author` string,
+  `createTime` string
+)
+partitioned by (dt string)
+stored as parquet
+location '/warehouse/gmall/dws/dws_origin_text';
+
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert overwrite table dws_origin_text
+partitioned(dt='2021-04-27')
+select
+  t.originId,
+  t.text,
+  t.author,
+  t.createTime
+from
+  (
+  select
+    originId,
+    text,
+    author,
+    createTime
+    row_number() over (distribute by originId by originId asc) as rn
+  from 
+  dwd_analyze_log) t
+  where t.rn = 1;

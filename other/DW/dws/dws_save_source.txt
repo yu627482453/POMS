@@ -1,0 +1,28 @@
+drop table if exists dws_save_source;
+
+create external table dws_save_source
+(
+  `sourceId` string,
+  `sourceName` string
+)
+partitioned by (dt string)
+stored as parquet
+location '/warehourse/gmall/dws/dws_save_source';
+ 
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert overwrite table dws_save_source
+partitioned(dt='2021-04-27')
+select
+  t.sourceId,
+  t.sourceName
+from
+  (
+  select
+    sourceId, 
+	sourceName,
+	row_number() over(distribute by sourceId by sourceId asc) as rn
+  from 
+  dwd_save_log) t
+  where t.rn=1;
+          
