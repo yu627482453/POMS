@@ -14,6 +14,8 @@ class OItem(scrapy.Item):
     heat = scrapy.Field()
     author = scrapy.Field()
     createdTime = scrapy.Field()
+    selectTime = scrapy.Field()
+    originId = scrapy.Field()
 
 
 class OpItem(scrapy.Item):
@@ -25,4 +27,5 @@ class OpItem(scrapy.Item):
     createdTime = scrapy.Field()
     sourceId = scrapy.Field()
     sourceName = scrapy.Field()
+
 

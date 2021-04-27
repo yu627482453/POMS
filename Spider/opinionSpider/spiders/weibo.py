@@ -5,6 +5,7 @@
 @file: weibo.py
 @time1: 2021/4/22 10:59
 """
+import datetime
 import json
 import re
 import time
@@ -45,16 +46,18 @@ class WeiboSpider(scrapy.Spider, ABC):
             except KeyError:
                 pass
 
-            repost_count = data['reposts_count']
-            comment_count = data['comments_count']
-            attitude_count = data['attitudes_count']
+            try:
+                repost_count = data['reposts_count']
+                comment_count = data['comments_count']
+                attitude_count = data['attitudes_count']
 
-            # model: str = WeiboConfig().get_heat_model()
-            #
-            # oItem['heat'] = eval(model, {'x': repost_count,
-            #                              'y': comment_count,
-            #                              'z': attitude_count}
-            #                      )
+                oItem['heat'] = int(repost_count) * 0.4 + int(comment_count) * 0.5 + int(attitude_count) * 0.01
+            except KeyError:
+                oItem['heat'] = 0
+
+            oItem['selectTime'] = datetime.datetime.now().strftime("%Y %M %d %H:%M:%S")
+
+            oItem['originId'] = uuid.uuid3(uuid.NAMESPACE_OID, oItem['text'])
 
             yield scrapy.Request(WeiboConfig().get_extend(data['id']), callback=self.parse_extend,
                                  meta={'oItem': oItem})

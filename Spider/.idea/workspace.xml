@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96c996f-faa8-49b3-a80a-fda631e1572b" name="Default Changelist" comment="spider Adjustment">
-      <change beforePath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../other/DW/ods/ods_save_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/src/main/java/com/nex/flume/interceptor/LogTypeInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/classes/com/nex/flume/interceptor/LogTypeInterceptor$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/classes/com/nex/flume/interceptor/LogTypeInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/flume-interceptor-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/flume-interceptor/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../other/flume-interceptor/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../other/kafka-flume-hdfs.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/topfish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/toutiao.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/toutiao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opinionSpider/spiders/weibo.py" beforeDir="false" afterPath="$PROJECT_DIR$/opinionSpider/spiders/weibo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +224,16 @@
     </task>
     <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -5,6 +5,7 @@
 @file: toutiao.py
 @time1: 2021/4/22 19:38
 """
+import datetime
 import json
 import time
 import uuid
@@ -50,17 +51,15 @@ class ToutiaoSpider(scrapy.Spider, ABC):
             except KeyError:
                 pass
             try:
-                reportCount = data['reportCount']
+                repost_count = data['reportCount']
+                comment_count = data['commentCount']
+                attitude_count = data['attitudes_count']
+                oItem['heat'] = int(repost_count) * 0.4 + int(comment_count) * 0.5 + int(attitude_count) * 0.01
             except KeyError:
-                pass
-            try:
-                commentCount = data['commentCount']
-            except KeyError:
-                pass
-            try:
-                attitudeCount = data['attitudes_count']
-            except KeyError:
-                pass
-            # TODO heat
+                oItem['heat'] = 0
+
+            oItem['selectTime'] = datetime.datetime.now().strftime("%Y %M %d %H:%M:%S")
+
+            oItem['originId'] = uuid.uuid3(uuid.NAMESPACE_DNS, oItem['text'])
 
             yield oItem

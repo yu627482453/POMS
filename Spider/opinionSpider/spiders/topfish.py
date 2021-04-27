@@ -5,6 +5,7 @@
 @file: topfish.py
 @time1: 2021/4/22 22:14
 """
+import datetime
 import json
 import uuid
 import time
@@ -52,7 +53,7 @@ class TopfishSpider(scrapy.Spider, ABC):
             except KeyError:
                 pass
             try:
-                opItem['text'] = data['text']
+                opItem['text'] = data['Desc']
             except KeyError:
                 pass
             try:
@@ -73,6 +74,7 @@ class TopfishSpider(scrapy.Spider, ABC):
                 opItem['createdTime'] = time.strftime("%Y %M %d %H:%M:%S", time1)
             except KeyError:
                 pass
+
             yield opItem
 
     def parse_url(self, url):

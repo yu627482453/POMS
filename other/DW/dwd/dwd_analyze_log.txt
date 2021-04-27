@@ -1,0 +1,31 @@
+// 删除表
+DROP TABLE IF EXISTS dwd_analyze_log;
+
+// 建表
+CREATE EXTERNAL TABLE dwd_analyze_log(
+`id` string,
+`text` string,
+`title` string,
+`heat` int,
+`author` string,
+`createdTime` string,
+`selectTime` string,
+`originId` string
+)
+PARTITIONED BY (dt string)
+location '/warehouse/gmall/dwd/dwd_analyze_log/';
+
+// 插入数据
+
+INSERT OVERWRITE TABLE dwd_analyze_log
+PARTITION (dt='2021-04-26')
+select 
+  get_json_object(line, '$.id') id,
+  get_json_object(line, '$.title') title,
+  get_json_object(line, '$.text') text,
+  get_json_object(line, '$.heat') heat,
+  get_json_object(line, '$.createdTime') createdTime,
+  get_json_object(line, '$.selectTime) selectTime,
+  get_json_object(line, '$.originId) originId
+from ods_analyze_log
+where dt='2021-04-26';
